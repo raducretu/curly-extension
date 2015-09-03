@@ -1,0 +1,102 @@
+#sidebars-wrapper{
+	font-family: 'Roboto';
+	padding: 40px 0px 40px 40px;
+	max-width: 450px;
+	position: relative;
+	-webkit-transition: all 150ms ease-in;
+	-moz-transition: all 150ms ease-in;
+	-ms-transition: all 150ms ease-in;
+	-o-transition: all 150ms ease-in;
+	transition: all 150ms ease-in;
+	text-decoration: none;
+}
+#sidebars-wrapper h1,
+#sidebars-wrapper h3{
+	color: #444;
+}
+#sidebars-wrapper h3{
+	margin-top: 80px;
+}
+#sidebars-wrapper input[type=text]{
+	width: 100%;
+	box-shadow: none;
+	height: 34px;
+	line-height: 34px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 0 10px;
+	margin: 0;
+	font-size: 14px;
+}
+#sidebars-wrapper input[type=submit]{
+	display: inline-block;
+	background: #DDD;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #5E5E5E;
+	border: none;
+	height: 34px;
+	line-height: 34px;
+	outline: none;
+	padding: 0 30px;
+	margin: 8px 8px 0 0;
+	cursor: pointer;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.15);
+	font-size: 14px;
+	font-weight: bold;
+}
+#sidebars-wrapper form{
+	position: relative;
+}
+#sidebars-wrapper #messages p{
+	background: rgba(0, 0, 0, .055);
+	font-size: 12px;
+	padding: 10px 15px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin: 10px 0 0 0;
+	position: relative;
+}
+#sidebar-list{
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #FAFAFA;
+}
+#sidebar-list li{
+	border-top: 1px solid #FAFAFA;
+	border-bottom: 1px solid #DDD;
+	padding: 8px 0;
+	margin: 0;
+	position: relative;
+}
+#sidebar-list li a{
+	float: right;
+	display: inline-block;
+	background: #DDD;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: none;
+	height: 18px;
+	line-height: 18px;
+	outline: none;
+	padding: 0 10px;
+	cursor: pointer;
+	font-size: 11px;
+	text-decoration: none;
+	color: #444;
+}
+#sidebar-list li a:hover{
+	background: #444;
+	color: #fff;
+}
+#sidebar-list code{
+	background: none;
+	font-size: 11px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	right: 80px;
+}

@@ -1,0 +1,305 @@
+@font-face {
+	font-family: 'curlythemes';
+	src:url('fonts/curlythemes.eot?-9fe6bk');
+	src:url('fonts/curlythemes.eot?#iefix-9fe6bk') format('embedded-opentype'),
+		url('fonts/curlythemes.woff?-9fe6bk') format('woff'),
+		url('fonts/curlythemes.ttf?-9fe6bk') format('truetype'),
+		url('fonts/curlythemes.svg?-9fe6bk#curlythemes') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="curly-icon-"]:before, [class*=" curly-icon-"]:before {
+	font-family: 'curlythemes';
+	font-size: 32px;
+	line-height: 56px;
+	top: 0px;
+	right: 10px;
+	position: absolute;
+	text-align: center;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: rgba(127, 140, 141, 0.45);
+	text-shadow: 0px 1px rgba(255, 255, 255, 1);
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+:hover[class^="curly-icon-"]:before, :hover[class*=" curly-icon-"]:before {
+	color: rgba(255, 255, 255, .45);
+	text-shadow: none;
+}
+
+.curly-icon-half:before {
+	content: "\e605";
+}
+.curly-icon-third:before {
+	content: "\e606";
+}
+.curly-icon-quarter:before {
+	content: "\e607";
+}
+.curly-icon-two-thirds:before {
+	content: "\e604";
+}
+.curly-icon-two-quarters:before {
+	content: "\e602";
+}
+.curly-icon-three-quarters:before {
+	content: "\e603";
+}
+.curly-icon-clear:before {
+	content: "\e61f";
+}
+.curly-icon-divider:before {
+	content: "\e61c";
+}
+.curly-icon-button:before {
+	content: "\e621";
+}
+.curly-icon-alert-box:before {
+	content: "\e624";
+}
+.curly-icon-blockquote:before {
+	content: "\e623";
+}
+.curly-icon-list:before {
+	content: "\e617";
+}
+.curly-icon-abbreviation:before {
+	content: "\e627";
+}
+.curly-icon-dropcap:before {
+	content: "\e61b";
+}
+.curly-icon-highlighted:before {
+	content: "\e61a";
+}
+.curly-icon-call-to-action:before {
+	content: "\e620";
+}
+.curly-icon-accordion:before {
+	content: "\e626";
+}
+.curly-icon-tabs:before {
+	content: "\e60d";
+}
+.curly-icon-team:before {
+	content: "\e601";
+}
+.curly-icon-testimonials:before {
+	content: "\e60c";
+}
+.curly-icon-you-tube:before {
+	content: "\e609";
+}
+.curly-icon-vimeo:before {
+	content: "\e60a";
+}
+.curly-icon-toggle:before {
+	content: "\e60b";
+}
+.curly-icon-slider:before {
+	content: "\e60e";
+}
+.curly-icon-marker:before {
+	content: "\e615";
+}
+.curly-icon-box:before {
+	content: "\e622";
+}
+.curly-icon-progress-bar:before {
+	content: "\e612";
+}
+.curly-icon-pricing-table:before {
+	content: "\e613";
+}
+.curly-icon-icon:before {
+	content: "\e619";
+}
+.curly-icon-clients:before {
+	content: "\e61e";
+}
+.curly-icon-lightbox:before {
+	content: "\e618";
+}
+.curly-icon-photo-frame:before {
+	content: "\e614";
+}
+.curly-icon-zoomify:before {
+	content: "\e608";
+}
+.curly-icon-agenda:before {
+	content: "\e625";
+}
+.curly-icon-countdown:before {
+	content: "\e61d";
+}
+.curly-icon-map:before {
+	content: "\e616";
+}
+.curly-icon-weather:before {
+	content: "\e60f";
+}
+.curly-icon-text-rotator:before {
+	content: "\e610";
+}
+.curly-icon-qr-code:before {
+	content: "\e611";
+}
+.curly-icon-full-width:before {
+	content: "\e628";
+}
+.curly-icon-logo:before {
+	content: "\e600";
+}
+
+
+#curly_shortcode_builder{
+	background: rgba(0, 0, 0, .85);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	display: none;
+}
+#curly_shortcode_builder > div{
+	background: #fff;
+	margin: 50px;
+	position: absolute;
+	padding: 30px;
+	box-sizing: border-box;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 1px 2px 6px rgba(0,0,0, 0.5);
+	-webkit-box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+	z-index: 9999999;
+}
+#curly_shortcodes{
+	margin: 0;
+	padding: 0;
+}
+#curly_shortcodes li{
+	display: inline-block;
+	float: left;
+	width: 20%;
+	box-sizing: border-box;
+	margin: 0;
+}
+#curly_shortcodes a{
+	text-decoration: none;
+	font-weight: bold;
+	background: #ecf0f1;
+	display: block;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 10px 35px 10px 15px;
+	margin: 2px;
+	overflow: auto;
+	position: relative;
+	font-size: 14px;
+}
+#curly_shortcodes a:hover{
+	background: #3498db;
+	color: #fff;
+}
+#curly_shortcodes a:hover small{
+	color: #fff;
+}
+#curly_shortcodes a i{
+	float: left;
+	height: 32px;
+	width: 32px;
+	line-height: 32px;
+	display: block;
+	margin-right: 10px;
+	color: #95a5a6;
+}
+#curly_shortcodes a small{
+	display: block;
+	color: #95a5a6;
+	font-weight: normal;
+}
+
+
+.mce-i-curly{
+	font: 400 20px/20px 'curlythemes' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-align: center !important;
+	width: auto;
+	height: auto;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+}
+.mce-i-curly:before{
+	margin: 0;
+	padding: 0;
+	display: block !important;
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	text-align: center;
+	content: "\e600";
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+	#curly_shortcode_builder{
+		position: absolute;
+	}
+	#curly_shortcode_builder > div{
+		margin: 0;
+		padding: 20px;
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-radius: 0px;
+	}
+	
+	#curly_shortcodes li{
+		width: 100%;
+	}
+}
+
+@media (min-width: 768px) {
+	#curly_shortcode_builder{
+		position: absolute;
+	}
+	#curly_shortcodes li{
+		width: 33%;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	#curly_shortcodes li{
+		width: 25%;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1300px) {
+	#curly_shortcode_builder{
+		position: fixed;
+	}
+	#curly_shortcodes li{
+		width: 20%;
+	}
+}
+

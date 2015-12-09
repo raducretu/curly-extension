@@ -39,7 +39,7 @@ function curly_simple_content_rotator( $atts , $content = null ) {
 	), $atts ) );
 	
 	$html = '<div class="scr-rotate" data-scr-animation="'.$animation.'"  data-scr-animation-out="'.$animation_out.'" data-scr-speed="'.$speed.'">';
-	$html .= do_shortcode($content);
+	$html .= apply_filters( 'the_content', $content);
 	$html .= '</div>';
 	
 	return $html;

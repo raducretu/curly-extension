@@ -71,6 +71,15 @@ $screen-sm-max: 992px;
 	img{
 		border-radius: 0;
 	}
+	p:empty{
+		display: none;
+	}
+	br{
+		display: none;
+	}
+	p{
+		margin: 0 auto !important;
+	}
 }
 
 /**
@@ -407,7 +416,7 @@ input[type="submit"]{
  */
  
 .well{
-	padding: 35px 0 0 0;
+	padding: 35px;
 	border: none;
 	background: transparent;
 	-webkit-box-shadow: none;
@@ -520,6 +529,7 @@ input[type="submit"]{
 .person.mini{
 	padding-left: 110px;
 	position: relative;
+	margin: 2.8rem 0;
 } 
 .person.mini img{
 	position: absolute;
@@ -556,7 +566,8 @@ input[type="submit"]{
  * -----------------------------------------------------------------------------
  */
  
-.zoom-picture:after{
+.zoom-picture:after,
+.zoom-picture-container .vc_single_image-wrapper:after{
 	content: '\F002';
 	font-family: 'FontAwesome';
 	text-shadow: 0px 0px 3px #000000;
@@ -571,35 +582,7 @@ input[type="submit"]{
  * 8.17 - Blockquote
  * -----------------------------------------------------------------------------
  */
- 
-.blockquote{
-	border:none;
-	padding: 0 0 0 70px;
-	position: relative;
-}
-.blockquote i:before{
-	float: left;
-	margin-left: -70px;
-	display: inline-block;
-	position: absolute;
-	font-style: normal;
-	top: 0;
-}
-.blockquote img{
-	border-radius: 300px;
-	margin: 0 0 10px 10px;
-	width: 90px;
-	height: 90px
-}
-.blockquote cite:before{
-	content: '\2014';
-	margin-right: 10px
-}
-.blockquote cite{
-	display: block;
-	font-weight:bold;
-	margin-top: 10px
-}
+
 
 /**
  * 8.18 - Testimonials

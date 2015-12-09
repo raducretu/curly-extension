@@ -1,5 +1,6 @@
 <?php
-add_shortcode("pricing-table", "curly_pricingTable"); 		
+add_shortcode("pricing-table", "curly_pricingTable");
+add_shortcode("curly_pricing_table", "curly_pricingTable"); 		
 
 function curly_pricingTable( $atts, $content = null ) {
 	extract(shortcode_atts(array(  
@@ -9,10 +10,11 @@ function curly_pricingTable( $atts, $content = null ) {
 	
 	$css = 'wl-pricing-table light';
 	 
-    return '<div class="'.$css.'">'.do_shortcode($content).'</div>';  
+    return '<div class="'.$css.'">'.apply_filters( 'the_content', $content).'</div>';  
 } 
 
-add_shortcode("pricing-header", "curly_pricing_table_header"); 		
+add_shortcode("pricing-header", "curly_pricing_table_header"); 
+add_shortcode("curly_pricing_header", "curly_pricing_table_header"); 		
 
 function curly_pricing_table_header( $atts, $content = null ) {
 	extract(shortcode_atts(array(  
@@ -32,7 +34,9 @@ function curly_pricing_table_header( $atts, $content = null ) {
     return $html;  
 } 
 
-add_shortcode("pricing-column", "curly_pricing_table_column"); 		
+add_shortcode("pricing-column", "curly_pricing_table_column");
+add_shortcode("curly_pricing_column", "curly_pricing_table_column");
+ 		
 
 function curly_pricing_table_column( $atts, $content = null ) {
 	extract(shortcode_atts(array( 
@@ -50,20 +54,22 @@ function curly_pricing_table_column( $atts, $content = null ) {
 		default		: $css .= ' one-four';
 	}
 	
-	$css .= ( $highlight == "yes" ) ? " highlight-column" : null;
+	$css .= ( filter_var( $highlight, FILTER_VALIDATE_BOOLEAN ) === true ) ? " highlight-column" : null;
 	
 	$css .= ( $last == "yes" ) ? " last" : null;
 	
-    return ( $content ) ? '<div class="content-column '.$css.'"><div class="pricing-table-content">'.do_shortcode($content).'</div></div>' : null;  
+    return ( $content ) ? '<div class="content-column '.$css.'"><div class="pricing-table-content">'.apply_filters( 'the_content', $content).'</div></div>' : null;  
 } 
 
-add_shortcode("pricing-row", "curly_pricing_table_row"); 		
+add_shortcode("pricing-row", "curly_pricing_table_row"); 
+add_shortcode("curly_pricing_row", "curly_pricing_table_row"); 		
 
 function curly_pricing_table_row( $atts, $content = null ) {
     return ( $content ) ? '<span>'.$content.'</span>' : null;  
 } 
 
-add_shortcode("pricing-footer", "curly_pricing_table_footer"); 		
+add_shortcode("pricing-footer", "curly_pricing_table_footer"); 
+add_shortcode("curly_pricing_footer", "curly_pricing_table_footer"); 		
 
 function curly_pricing_table_footer( $atts, $content = null ) {
     return ( $content ) ? '<div class="pricing-footer">'.do_shortcode($content).'</div>' : null;  

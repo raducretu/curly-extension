@@ -13,7 +13,7 @@ add_shortcode('accordion', 'curly_accordion');
 	$GLOBALS['accordionPanelID'] = $GLOBALS['accordionID'] * 100;
 	
     $html = '<div class="panel-group"  id="accordion'.$GLOBALS['accordionID'].'">';
-	$html .= do_shortcode($content).'</div>';
+	$html .= apply_filters( 'the_content', $content).'</div>';
 	return $html;
 }
 
@@ -30,7 +30,7 @@ add_shortcode('toggle', 'curly_toggle');
 		// Global Panel ID
 		$GLOBALS['accordionPanelID']++;
 		
-		if ( $opened == "yes" ) {
+		if ( filter_var( $opened, FILTER_VALIDATE_BOOLEAN ) === true ) {
 			$opened = ' in';
 			$collapsed = null;
 		} else {
@@ -45,7 +45,7 @@ add_shortcode('toggle', 'curly_toggle');
 			$html .= '<div class="panel">';
 				$html .= '<div class="panel-heading"><h6><a class="accordion-toggle'.$collapsed.'" data-toggle="collapse" data-parent="#accordion'.$GLOBALS['accordionID'].'" href="#panel'.$GLOBALS['accordionPanelID'].'">'.$title.'</a></h6></div>';
 				$html .= '<div id="panel'.$GLOBALS['accordionPanelID'].'" class="panel-collapse collapse'.$opened.'"><div class="panel-body">
-				       '.do_shortcode($content).'</div></div>';
+				       '.apply_filters( 'the_content', $content).'</div></div>';
 			$html .= '</div>';
 		}	
 		

@@ -10,7 +10,7 @@ function curly_clients( $atts, $content = null ) {
 	$GLOBALS['rand_carousel'] = ( isset($GLOBALS['rand_carousel']) ) ? + 1 : 0;
 	$rand_carousel = 'carousel-'.$GLOBALS['rand_carousel'];
 	 
-    $html  = '<div class="clients-carousel-container"><div class="clients-carousel '.$rand_carousel.'"><ul>'.do_shortcode($content).'</ul></div>';
+    $html  = '<div class="clients-carousel-container"><div class="clients-carousel '.$rand_carousel.'"><ul>'.apply_filters( 'the_content', $content).'</ul></div>';
 		$html .= '<div class="controls">
 					<a href="#" class="prev fa fa-angle-left '.$rand_carousel.'"></a>
 					<a href="#" class="next fa fa-angle-right '.$rand_carousel.'"></a>

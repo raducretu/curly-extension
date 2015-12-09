@@ -11,7 +11,7 @@ function curly_prettyphoto( $atts, $content = null ) {
     
     $display = ( $visible == 'no' ) ? ' style="display:none"' : null; 
 	
-    return '<a href="'.$image.'" title="'.$title.'" data-lightbox="lightbox-'.$gallery.'" '.$display.'>'.do_shortcode($content).'</a>';  
+    return '<a href="'.$image.'" title="'.$title.'" data-lightbox="lightbox-'.$gallery.'" '.$display.'>'.apply_filters( 'the_content', $content).'</a>';  
 }  
 
 

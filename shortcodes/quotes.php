@@ -9,7 +9,7 @@ function curly_blockquote( $atts, $content = null ) {
 	), $atts)); 
 	
 	$img = ( $image ) ? '<img src="'.$image.'" alt="'.( ( $cite ) ? $cite : null ).'" class="pull-right hidden-xs">' : null;
-	 
-    return ( $content ) ? '<blockquote class="blockquote clearfix"><i class="fa fa-3x fa-quote-left"></i>'.$img.$content.( ( $cite ) ? '<cite>'.$cite.'</cite>' : null ).'</blockquote>' : null;  
+	//$content = function_exists( 'wpb_js_remove_wpautop' ) ? wpb_js_remove_wpautop( $content, true ) : $content;  
+    return ( $content ) ? '<blockquote>' . $img . do_shortcode( $content ) . ( $cite  ? '<cite>'.$cite . '</cite>' : null ) . '</blockquote>' : null;
 }
 ?>

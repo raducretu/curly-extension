@@ -7,6 +7,7 @@ function curly_agenda( $atts, $content = null ) {
 } 
 
 add_shortcode("event-day", "curly_day"); 		
+add_shortcode("event_day", "curly_day");
 
 function curly_day( $atts, $content = null ) {
 	extract(shortcode_atts(array(
@@ -38,7 +39,7 @@ function curly_event( $atts, $content = null ) {
 	if ( $content || $room || $time ) {
 		$html .= '<div class="event-agenda-event row">';
 		$html .= ( $time ) ? '<span class="col-md-2 col-sm-2 col-lg-2"><i class="fa fa-clock-o"></i>  '.$time.'</span>' : null;
-		$html .= ( $content ) ? '<div class="col-md-8 col-sm-8 col-lg-8">'.do_shortcode($content).'</div>' : null;
+		$html .= ( $content ) ? '<div class="col-md-8 col-sm-8 col-lg-8">'.apply_filters( 'the_content', $content).'</div>' : null;
 		$html .= ( $room ) ? '<span class="col-md-2 col-sm-2 col-lg-2 text-right">'.$room.'  <i class="fa fa-map-marker"></i></span>' : null;
 		$html .= '</div>';
 	}

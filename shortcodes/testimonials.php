@@ -11,7 +11,7 @@ function curly_testimonials( $atts, $content = null ) {
 	$GLOBALS['carouselID'] = ( isset($GLOBALS['carouselID']) ) ? +1 : 0;
 	$GLOBALS['carouselSlideID'] = $GLOBALS['carouselID'] * 100;
 	 
-    $html = '<div id="carousel-'.$GLOBALS['carouselID'].'" class="carousel slide testimonials" data-ride="carousel" data-interval="'.$speed.'"><div class="carousel-inner">'.do_shortcode($content).'</div></div>'; 
+    $html = '<div id="carousel-'.$GLOBALS['carouselID'].'" class="carousel slide testimonials" data-ride="carousel" data-interval="'.$speed.'"><div class="carousel-inner">'.apply_filters( 'the_content', $content).'</div></div>'; 
     
     if ( $height && $height == "equal" ) {
     	$html .= "<script type='text/javascript'>jQuery(document).ready(function(){ jQuery('.testimonials .carousel-inner').equalize('height'); });</script>";

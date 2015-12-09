@@ -16,7 +16,7 @@ function curly_highlight( $atts, $content = null ) {
 		default			: $style = null;
 	}
 	
-    return '<div class="lead '.$css.'"'.$style.'>'.do_shortcode($content).'</div>';  
+    return '<div class="lead '.$css.'"'.$style.'>'.apply_filters( 'the_content', $content).'</div>';  
 } 
 
 ?>

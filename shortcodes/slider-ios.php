@@ -19,7 +19,7 @@ function curly_iosslider( $atts, $content = null ) {
     $html  = '<div class="wl-slider-ios-container"><div class="wl-slider-ios"><div class="iosSlider">';
     
     // Populate Slider
-    $html .= '<div class="slider">'.do_shortcode($content).'</div>'; 
+    $html .= '<div class="slider">'.apply_filters( 'the_content', $content).'</div>'; 
     
     // Navigation Arrows
     $html .= '<div class="next"></div><div class="prev"></div>';

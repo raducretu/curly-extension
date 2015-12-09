@@ -38,7 +38,7 @@ function curly_mapmaker( $atts, $content = null ) {
 		
 		if ( $content ) {
 			$markers = 'marker:{
-							values:['.do_shortcode( $content ).'],
+							values:['.apply_filters( 'the_content',  $content ).'],
 							events:{
 								mouseover: function(marker, event, context){
 									var map = jQuery(this).gmap3("get"),

@@ -63,7 +63,8 @@ if( ! class_exists('CurlyRenderCSS') ) return;
 
 /*	Shortcodes - Accordion
 	================================================= */
-	$curly_css_output .= '.panel{
+	$curly_css_output .= '
+				.panel{
 					border-bottom: 1px solid '.$curly_color_text->opacity(0.15).';
 				}
 				footer .panel{
@@ -78,14 +79,14 @@ if( ! class_exists('CurlyRenderCSS') ) return;
 				.btn:focus,
 				input[type="button"],
 				input[type="submit"],
-				.button{
+				.button:not(.wc-forward){
 					background: '.$curly_color_primary.';
 					color: '.$curly_color_primary->contrast().';
 				}
 				.btn:hover,
 				input[type="button"]:hover,
 				input[type="submit"]:hover,
-				.button:hover{
+				.button:not(.wc-forward):hover{
 					background: '.$curly_color_primary->darken().';
 					color: '.$curly_color_primary->contrast().';
 				}';							

@@ -17,7 +17,7 @@ function curly_roundaboutslider( $atts, $content = null ) {
 	}
     
     // Populate Slider
-    $html  = '<ul class="roundabout-slider">'.do_shortcode($content).'</ul>'; 
+    $html  = '<ul class="roundabout-slider">'.apply_filters( 'the_content', $content).'</ul>'; 
     
     function curly_shortcode_roundabout() {
 	    $html = "<script type='text/javascript'>

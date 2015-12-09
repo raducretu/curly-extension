@@ -36,6 +36,6 @@ function curly_buttons( $atts, $content = null ) {
 	$rel_val = ( isset($rel) ) ? 'rel="'.$rel.'"' : null;
 	
 	// Return 
-    return '<a href="'.$link.'" title="'.$title.'" target="'.$target.'" '.$rel_val.' class="'.$css.'">'.do_shortcode( $content ).'</a>';  
+    return '<a href="'.$link.'" title="'.$title.'" target="'.$target.'" '.$rel_val.' class="'.$css.'">'.do_shortcode($content).'</a>';  
 }  
 ?>

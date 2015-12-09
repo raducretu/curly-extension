@@ -15,7 +15,7 @@ function curly_marker( $atts, $content = null ) {
 		default			: $css = 'label-primary';
 	}
 	 
-    return '<span class="label '.$css.'">'.do_shortcode($content).'</span>';  
+    return '<span class="label '.$css.'">'.apply_filters( 'the_content', $content).'</span>';  
 }  
 
 

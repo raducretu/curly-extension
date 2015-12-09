@@ -36,7 +36,7 @@ function curly_fullwidthbox( $atts, $content = null ) {
 	
 	$html  = '</div></div></div>';
 	$html .= '<div style="'.$style.'" class="fullwidth-row"><div class="container page-content"><div class="row" style="'.$style_row.'"><div class="col-lg-12" style="'.$style_inner.'">';
-		$html .= do_shortcode($content);
+		$html .= apply_filters( 'the_content', $content);
 	$html .= '</div></div></div></div>';
 	$html .= '<div class="container page-content"><div class="row"><div class="col-lg-12">';
 	

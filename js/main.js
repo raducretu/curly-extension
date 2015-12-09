@@ -19,6 +19,10 @@ jQuery(document).ready(function(){
 		jQuery('.zoom-picture').zoom();
 	}
 	
+	if( jQuery('.zoom-picture-container').length > 0 ) { 
+		jQuery('.vc_single_image-wrapper', '.zoom-picture-container').zoom();
+	}
+	
 });
 
 (function($) {

@@ -22,8 +22,8 @@ function curly_column( $atts, $content = null ) {
 	}
 	
 	$inline = ($margin != null) ? ' style="margin-bottom: '.$margin.'px" ' : null;
-	 
-    return ( $last == 'yes' ) ? '<div class="'.$css.'" '.$inline.'>'.do_shortcode($content).'</div><div class="clear"></div>' : '<div class="'.$css.'" '.$inline.'>'.do_shortcode($content).'</div>';  
+	$content = function_exists( 'wpb_js_remove_wpautop' ) ? wpb_js_remove_wpautop( $content, true ) : $content; 
+    return ( $last == 'yes' ) ? '<div class="'.$css.'" '.$inline.'>'.apply_filters( 'the_content', $content).'</div><div class="clear"></div>' : '<div class="'.$css.'" '.$inline.'>'.apply_filters( 'the_content', $content).'</div>';  
 } 
 
 ?>

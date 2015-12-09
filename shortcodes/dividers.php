@@ -10,12 +10,12 @@ function curly_dividers( $atts, $content = null ) {
 	
 	$css = 'divider';
 	
-	switch ($style){
-		case '1'  : $css .= ' one'; break;
-		case '2'  : $css .= ' two'; break;
-		case '3'  : $css .= ' three'; break;
-		case '4'  : $css .= ' four'; break;
-		case '5'  : $css .= ' five'; break;
+	switch( intval( $style ) ){
+		case 1  : $css .= ' one'; break;
+		case 2  : $css .= ' two'; break;
+		case 3  : $css .= ' three'; break;
+		case 4  : $css .= ' four'; break;
+		case 5  : $css .= ' five'; break;
 	}
 	
 	$inline = null;

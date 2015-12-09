@@ -17,8 +17,10 @@ function curly_lists( $atts, $content = null ) {
 		case 'none' 		: $css = 'list-none'; break;
 		default				: $css = 'list-none';
 	}
+
+	$content = function_exists( 'wpb_js_remove_wpautop' ) ? wpb_js_remove_wpautop( $content, true ) : $content; 
 	 
-    return '<div class="'.$css.'">'.do_shortcode($content).'</div>';  
+    return '<div class="'.$css.'">'.apply_filters( 'the_content', $content ).'</div>';  
 } 
 
 ?>

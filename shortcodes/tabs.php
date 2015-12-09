@@ -1,6 +1,6 @@
 <?php
 add_shortcode('tabs', 'curly_tabs');
-	function curly_tabs( $atts, $content = null ) {
+function curly_tabs( $atts, $content = null ) {
 	
 	$GLOBALS['tabsID'] = ( isset($GLOBALS['tabsID']) ) ? $GLOBALS['tabsID'] + 1 : 0;
 	$GLOBALS['tabsSlideID'] = $GLOBALS['tabsID'] * 100;
@@ -20,7 +20,7 @@ add_shortcode('tabs', 'curly_tabs');
 		$html .= '</ul>';
 		
 		$html .= '<div class="tab-content">';
-			$html .= do_shortcode($content);
+			$html .= apply_filters( 'the_content', $content);
 		$html .= '</div>';
 		
 	$html .= '</div>';
@@ -29,7 +29,7 @@ add_shortcode('tabs', 'curly_tabs');
 }
 
 add_shortcode('tab', 'curly_tab');
-	function curly_tab( $atts, $content = null ) {
+function curly_tab( $atts, $content = null ) {
 	$GLOBALS['tabsSlideID']++;
 	extract(shortcode_atts(array(), $atts));
 	if( $GLOBALS['tabsSlideID'] % 100 == 1 ) { 
@@ -37,9 +37,83 @@ add_shortcode('tab', 'curly_tab');
 	} else {
 		$css = null;
 	}
-	$html = '<div class="tab-pane'.$css.'" id="tab'.( $GLOBALS['tabsSlideID'] - 1 ).'">' . do_shortcode($content) .'</div>';
+	$html = '<div class="tab-pane'.$css.'" id="tab'.( $GLOBALS['tabsSlideID'] - 1 ).'">' . apply_filters( 'the_content', $content) .'</div>';
 	
 	return $html;
 }
+
+add_shortcode('curly_tabs', 'curly_tabs_vc');
+function curly_tabs_vc( $atts, $content = null ) {
+	
+	$GLOBALS['tabsID'] = ( isset($GLOBALS['tabsID']) ) ? $GLOBALS['tabsID'] + 1 : 0;
+	$GLOBALS['tabsSlideID'] = $GLOBALS['tabsID'] * 100;
+	
+	$pattern = get_shortcode_regex();
+		
+	preg_match_all( "/$pattern/", $content, $shortcodes );
+	
+	$shortcodes_array = $shortcodes[2];
+	$shortcodes_values_array = $shortcodes[3];
+	$shortcodes_content_array = $shortcodes[5];
+	
+	extract( shortcode_atts( array() , $atts ) );
+	
+	if( has_shortcode( $content, 'curly_tab' ) ){
+		
+		$html  = '<div class="tabs-container">';
+		
+			$html .= '<ul class="nav nav-tabs">';
+			
+			$tabs_keys = array_keys( $shortcodes_array, 'curly_tab' );
+			
+			$index = 0;
+			
+			foreach( $tabs_keys as $key => $tab ){
+				
+				extract(
+					shortcode_atts( 
+						array(
+							'title' => null
+						), 
+						shortcode_parse_atts( $shortcodes_values_array[ $tab ] ), 'curly_tab' 
+					)
+				);
+			
+				$html .= '<li class="'. ( $index === 0 ? 'active' : '' ) .'"><a href="#tab' . ( 100 * $GLOBALS['tabsID'] + 1 ) . '" data-toggle="tab">' . $title . '</a></li>';
+				
+				$index++;
+			}
+			
+			$html .= '</ul>';
+			
+			$html .= '<div class="tab-content">';
+			
+				$html .= do_shortcode( $content );
+				
+			$html .= '</div>';
+			
+		$html .= '</div>';
+		
+		return $html;
+		
+	}
+	
+}
+
+
+add_shortcode('curly_tab', 'curly_tab_vc');
+function curly_tab_vc( $atts, $content = null ) {
+	$GLOBALS['tabsSlideID']++;
+	extract(shortcode_atts(array(), $atts));
+	if( $GLOBALS['tabsSlideID'] % 100 == 1 ) { 
+		$css = ' active'; 
+	} else {
+		$css = null;
+	}
+	$html = '<div class="tab-pane'.$css.'" id="tab'.( $GLOBALS['tabsSlideID'] - 1 ).'">' . apply_filters( 'the_content', $content) .'</div>';
+	
+	return $html;
+}
+
 
 ?>

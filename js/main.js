@@ -1,10 +1,10 @@
 jQuery(document).ready(function(){
 	"use strict";
-	
+
 	if ( jQuery('.video-container').length > 0 ) {
 		jQuery(".video-container").fitVids();
     }
-	
+
 	// Accordion
 	if ( jQuery('.panel-group').length > 0 ) {
 		jQuery('.panel-group').each(function () {
@@ -14,20 +14,22 @@ jQuery(document).ready(function(){
 			}
 		});
 	}
-		
-	if( jQuery('.zoom-picture').length > 0 ) { 
+
+	if( jQuery('.zoom-picture').length > 0 ) {
 		jQuery('.zoom-picture').zoom();
 	}
-	
-	if( jQuery('.zoom-picture-container').length > 0 ) { 
+
+	if( jQuery('.zoom-picture-container').length > 0 ) {
 		jQuery('.vc_single_image-wrapper', '.zoom-picture-container').zoom();
 	}
-	
+
 });
+
+
 
 (function($) {
 	"use strict";
-	
+
 	/** Gallery Isotope */
   	$(function() {
   	    if ( $('.recent-posts .recent-post').length > 0 ) {
@@ -39,7 +41,23 @@ jQuery(document).ready(function(){
 	  	    });
   	    }
   	});
-	
+
+		$('.gallery').each(function() { // the containers for all your galleries
+
+
+				if( $('a[href$=".jpg"], a[href$=".JPG"], a[href$=".png"], a[href$=".PNG"], a[href$=".gif"], a[href$=".GIF"], a[href$=".jpeg"], a[href$=".JPEG"], a[href$=".bmp"], a[href$=".BMP"]', this ).length > 0 ){
+					$(this).magnificPopup({
+			        delegate: '.gallery-item a', // the selector for gallery item
+			        type: 'image',
+			        gallery: {
+			          enabled:true
+			        }
+			    });
+				}
+
+
+		});
+
 })(jQuery);
 
 

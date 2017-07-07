@@ -16,7 +16,7 @@
 
 /** 8.0 - Shortcodes ----------------------------------------------------------------------------- */
 /** 8.1 - Accordion ----------------------------------------------------------------------------- */
-.panel { background: transparent; margin: 0 !important; }
+.panel { background: transparent; }
 
 .panel .accordion-toggle { display: block; }
 
@@ -130,11 +130,11 @@
 
 .clients-carousel ul a { padding: 1px; display: block; overflow: hidden; }
 
-.clients-carousel img { -webkit-transition: opacity 160ms ease-in-out; transition: opacity 160ms ease-in-out; -webkit-backface-visibility: hidden; -webkit-transform: rotate(0); transform: rotate(0); position: relative; opacity: 0.4; filter: alpha(opacity=40); }
+.clients-carousel img { transition: opacity 160ms ease-in-out; -webkit-backface-visibility: hidden; -webkit-transform: rotate(0); transform: rotate(0); position: relative; opacity: 0.4; filter: alpha(opacity=40); }
 
 .clients-carousel img:hover { opacity: 1; filter: alpha(opacity=100); }
 
-.clients-carousel .next:after, .clients-carousel .prev:after { -webkit-transition: opacity 160ms ease-in-out; transition: opacity 160ms ease-in-out; }
+.clients-carousel .next:after, .clients-carousel .prev:after { transition: opacity 160ms ease-in-out; }
 
 .clients-carousel-container .controls { position: absolute; top: 50%; margin-top: -12px; width: 100%; left: 0; }
 
@@ -375,7 +375,7 @@
 
 .custom_recent_posts .recent-posts.type-thumbnail li:hover .wp-post-image { opacity: 1; }
 
-.custom_recent_posts .recent-posts.type-thumbnail .wp-post-image { max-width: 80px; height: auto; position: absolute; left: 0; top: 20px; -webkit-transition: opacity 200ms; transition: opacity 200ms; opacity: 0; }
+.custom_recent_posts .recent-posts.type-thumbnail .wp-post-image { max-width: 80px; height: auto; position: absolute; left: 0; top: 20px; transition: opacity 200ms; opacity: 0; }
 
 .custom_recent_posts .recent-posts.type-thumbnail time { display: block; width: 80px; height: 80px; position: absolute; left: 0; top: 20px; text-align: center; border-radius: 3px; }
 

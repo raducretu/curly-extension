@@ -1,62 +1,62 @@
-<?php 
+<?php
 
 if( ! class_exists('CurlyRenderCSS') ) return;
 
-	
+
 /*	Colors
 	================================================= */
-	
-	$curly_color_text = 
+
+	$curly_color_text =
 		new CurlyThemesColor( get_theme_mod( 'color_text', '#1E1E1E' ) );
-	$curly_color_bg = 
+	$curly_color_bg =
 		new CurlyThemesColor( get_theme_mod( 'color_bg', '#faf6f0' ) );
-	$curly_color_primary = 
-		new CurlyThemesColor( get_theme_mod( 'color_primary', '#C0392B' ) );		
-	$curly_color_link = 
+	$curly_color_primary =
+		new CurlyThemesColor( get_theme_mod( 'color_primary', '#C0392B' ) );
+	$curly_color_link =
 		new CurlyThemesColor( get_theme_mod( 'color_links', '#c0392b' ) );
-	$curly_color_hover = 
+	$curly_color_hover =
 		new CurlyThemesColor( get_theme_mod( 'color_links_hover', '#1E1E1E' ) );
-	/**		
-	$this->_color_header = 
-		new CurlyThemesColor( get_theme_mod( 'header_text_color', '#ffffff' ) );		
-	$this->_color_header_bg	= 
-		new CurlyThemesColor( get_theme_mod( 'header_shading_color', 'rgba(0,0,0, 0.55)' ) );	
-	*/			
-	$curly_color_footer_text = 
+	/**
+	$this->_color_header =
+		new CurlyThemesColor( get_theme_mod( 'header_text_color', '#ffffff' ) );
+	$this->_color_header_bg	=
+		new CurlyThemesColor( get_theme_mod( 'header_shading_color', 'rgba(0,0,0, 0.55)' ) );
+	*/
+	$curly_color_footer_text =
 		new CurlyThemesColor( get_theme_mod( 'footer_text_color', '#9C9996' ) );
 	/**
-	$this->_color_footer_bg = 
-		new CurlyThemesColor( get_theme_mod( 'footer_bg_color', '#0E0905' ) );	
+	$this->_color_footer_bg =
+		new CurlyThemesColor( get_theme_mod( 'footer_bg_color', '#0E0905' ) );
 	*/
-	$curly_color_footer_link = 
+	$curly_color_footer_link =
 		new CurlyThemesColor( get_theme_mod( 'footer_link_color', '#9C9996' ) );
-	$curly_color_footer_title = 
+	$curly_color_footer_title =
 		new CurlyThemesColor( get_theme_mod( 'footer_title_color', '#FFFFFF' ) );
-	$curly_color_h1 = 
+	$curly_color_h1 =
 		new CurlyThemesColor( get_theme_mod( 'color_h1', '#1E1E1E' ) );
-	$curly_color_h2 = 
+	$curly_color_h2 =
 		new CurlyThemesColor( get_theme_mod( 'color_h2', '#1E1E1E' ) );
-	$curly_color_h3 = 
+	$curly_color_h3 =
 		new CurlyThemesColor( get_theme_mod( 'color_h3', '#1E1E1E' ) );
-	$curly_color_h4 = 
+	$curly_color_h4 =
 		new CurlyThemesColor( get_theme_mod( 'color_h4', '#1E1E1E' ) );
-	$curly_color_h5 = 
+	$curly_color_h5 =
 		new CurlyThemesColor( get_theme_mod( 'color_h5', '#1E1E1E' ) );
-	$curly_color_h6 = 
+	$curly_color_h6 =
 		new CurlyThemesColor( get_theme_mod( 'color_h6', '#1E1E1E' ) );
-	$curly_color_menu = 
-		new CurlyThemesColor( get_theme_mod( 'color_menu_bg', '#C0392B' ) ); 	
-	$curly_color_menu_link = 
+	$curly_color_menu =
+		new CurlyThemesColor( get_theme_mod( 'color_menu_bg', '#C0392B' ) );
+	$curly_color_menu_link =
 		new CurlyThemesColor( get_theme_mod( 'color_menu_text', '#FFFFFF' ) );
-	$curly_color_menu_hover = 
+	$curly_color_menu_hover =
 		new CurlyThemesColor( get_theme_mod( 'color_menu_hover_text', '#E09C95' ) );
-	$curly_color_submenu = 
-		new CurlyThemesColor( get_theme_mod( 'color_submenu_bg', '#ffffff' ) ); 	
-	$curly_color_submenu_link = 
+	$curly_color_submenu =
+		new CurlyThemesColor( get_theme_mod( 'color_submenu_bg', '#ffffff' ) );
+	$curly_color_submenu_link =
 		new CurlyThemesColor( get_theme_mod( 'color_submenu_text', '#33332E' ) );
-	$curly_color_submenu_hover = 
-		new CurlyThemesColor( get_theme_mod( 'color_submenu_hover_text', '#c0392b' ) );	
-	
+	$curly_color_submenu_hover =
+		new CurlyThemesColor( get_theme_mod( 'color_submenu_hover_text', '#c0392b' ) );
+
 /*	Shortcodes
 	================================================= */
 	$curly_css_output = null;
@@ -64,7 +64,7 @@ if( ! class_exists('CurlyRenderCSS') ) return;
 /*	Shortcodes - Accordion
 	================================================= */
 	$curly_css_output .= '
-				.panel{
+				:not(.wc-tabs-wrapper) > .panel{
 					border-bottom: 1px solid '.$curly_color_text->opacity(0.15).';
 				}
 				footer .panel{
@@ -89,7 +89,7 @@ if( ! class_exists('CurlyRenderCSS') ) return;
 				.button:not(.wc-forward):hover{
 					background: '.$curly_color_primary->darken().';
 					color: '.$curly_color_primary->contrast().';
-				}';							
+				}';
 
 /*	Shortcodes - Action Boxes
 	================================================= */
@@ -120,7 +120,7 @@ if( ! class_exists('CurlyRenderCSS') ) return;
 				}
 				.event-agenda .row:hover{
 					background: '.$curly_color_text->opacity(0.05).';
-				}';					
+				}';
 
 /*	Shortcodes - Box
 	================================================= */
@@ -190,8 +190,8 @@ if( ! class_exists('CurlyRenderCSS') ) return;
 					border-bottom: 1px solid '.$curly_color_text->opacity(0.15).';
 					border-top: 3px solid '.$curly_color_primary.';
 				}
-				.nav-tabs .active>a, 
-				.nav-tabs .active>a:hover, 
+				.nav-tabs .active>a,
+				.nav-tabs .active>a:hover,
 				.nav-tabs .active>a:focus{
 					background: '.$curly_color_primary.' !important;
 					border-bottom: 1px solid red;
@@ -199,7 +199,7 @@ if( ! class_exists('CurlyRenderCSS') ) return;
 				}
 				.nav-tabs li a:hover{
 					background: '.$curly_color_text->opacity(0.07).';
-				}';				
+				}';
 
 /*	Shortcodes - Toggle
 	================================================= */
@@ -252,7 +252,7 @@ if( ! class_exists('CurlyRenderCSS') ) return;
 	================================================= */
 	$curly_css_output .= '.person img{
 					border: 5px solid '.$curly_color_text->opacity(0.2).';
-				}';	
+				}';
 
 /*	Shortcodes - Clients Carousel
 	================================================= */
@@ -265,18 +265,18 @@ if( ! class_exists('CurlyRenderCSS') ) return;
 				.clients-carousel-container:hover .prev{
 					background-color: '.$curly_color_primary.';
 					color: '.$curly_color_primary->contrast().';
-				}';		
+				}';
 
 /*	Shortcodes - Pricing Tables
-	================================================= */	
+	================================================= */
 	$curly_css_output .= '.wl-pricing-table .content-column{
 					background-color: '.$curly_color_text->opacity(0.05).';
 				}
-				.wl-pricing-table .content-column h4 *:after, 
-				.wl-pricing-table .content-column h4 *:before{ 
+				.wl-pricing-table .content-column h4 *:after,
+				.wl-pricing-table .content-column h4 *:before{
 					border-top: 3px double '.$curly_color_text->opacity(0.2).';
 				}
-				
+
 				.wl-pricing-table.light .content-column.highlight-column{
 					background-color: '.$curly_color_primary.';
 					color: '.$curly_color_primary->contrast().';
@@ -285,8 +285,8 @@ if( ! class_exists('CurlyRenderCSS') ) return;
 				.wl-pricing-table.light .content-column.highlight-column h4{
 					color: '.$curly_color_text->contrast().';
 				}
-				.wl-pricing-table.light .content-column.highlight-column h4 *:after, 
-				.wl-pricing-table.light .content-column.highlight-column h4 *:before{ 
+				.wl-pricing-table.light .content-column.highlight-column h4 *:after,
+				.wl-pricing-table.light .content-column.highlight-column h4 *:before{
 					border-top: 3px double '.$curly_color_text->contrast(0.2).'
 				}';
 

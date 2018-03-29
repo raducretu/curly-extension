@@ -11,13 +11,13 @@ Author URI: http://www.curlythemes.com
 function curly_qr_options_header() {
 	if ( !is_admin() ) {
 		wp_enqueue_style('arrow-icons', plugins_url( '/css/arrow-icons.css' , __FILE__ ), true);
-		wp_enqueue_style('arrow-icons-font', 'http://fonts.googleapis.com/css?family=Pacifico', true);
-	} 
+		wp_enqueue_style('arrow-icons-font', '//fonts.googleapis.com/css?family=Pacifico', true);
+	}
 }
 add_action('wp_enqueue_scripts', 'curly_qr_options_header');
 
 function curly_qr( $atts ) {
-	extract(shortcode_atts(array(  
+	extract(shortcode_atts(array(
 	    'type'  	=> null,
 		'title'  	=> null,
 		'url'  		=> null,
@@ -40,45 +40,45 @@ function curly_qr( $atts ) {
 		'pointer_color' 	=> '#CC0000',
 		'pointer_position' 	=> 'left',
 		'margin' 	=> 20
-		
-	), $atts)); 
-	
+
+	), $atts));
+
 	switch($type){
-	
-		case 'url' : 
-			$out = 'type=url&amp;url='.$atts['url']; 
+
+		case 'url' :
+			$out = 'type=url&amp;url='.$atts['url'];
 			break;
-		case 'contact' : 
-			$out = 'type=contact&amp;name='.$atts['name'].'&amp;address='.$atts['address'].'&amp;phone='.$atts['phone'].'&amp;email='.$atts['email']; 
+		case 'contact' :
+			$out = 'type=contact&amp;name='.$atts['name'].'&amp;address='.$atts['address'].'&amp;phone='.$atts['phone'].'&amp;email='.$atts['email'];
 			break;
-		case 'email' : 
-			$out = 'type=email&amp;email='.$atts['email'].'&amp;subject='.$atts['subject'].'&amp;message='.$atts['message']; 
+		case 'email' :
+			$out = 'type=email&amp;email='.$atts['email'].'&amp;subject='.$atts['subject'].'&amp;message='.$atts['message'];
 			break;
-		case 'geo' : 
-			$out = 'type=geo&amp;lat='.$atts['lat'].'&amp;lon='.$atts['lon'].'&amp;height='.$atts['height']; 
+		case 'geo' :
+			$out = 'type=geo&amp;lat='.$atts['lat'].'&amp;lon='.$atts['lon'].'&amp;height='.$atts['height'];
 			break;
-		case 'phone' : 
-			$out = 'type=phone&amp;phone='.$atts['phone']; 
+		case 'phone' :
+			$out = 'type=phone&amp;phone='.$atts['phone'];
 			break;
-		case 'sms' : 
-			$out = 'type=sms&amp;phone='.$atts['phone'].'&amp;message='.$atts['message']; 
+		case 'sms' :
+			$out = 'type=sms&amp;phone='.$atts['phone'].'&amp;message='.$atts['message'];
 			break;
-		case 'text' : 
-			$out = 'type=text&amp;text='.$text; 
+		case 'text' :
+			$out = 'type=text&amp;text='.$text;
 			break;
-		case 'wifi' : 
-			$out = 'type=wifi&amp;wifi_type='.$atts['wifi_type'].'&amp;ssid='.$atts['ssid'].'&amp;password='.$atts['password']; 
+		case 'wifi' :
+			$out = 'type=wifi&amp;wifi_type='.$atts['wifi_type'].'&amp;ssid='.$atts['ssid'].'&amp;password='.$atts['password'];
 			break;
-		case 'bookmark' : 
-			$out = 'type=bookmark&amp;text='.$title.'&amp;url='.$url; 
+		case 'bookmark' :
+			$out = 'type=bookmark&amp;text='.$title.'&amp;url='.$url;
 			break;
-		case 'auto' : 
-			$out = 'type=url&amp;url='.get_permalink(); 
+		case 'auto' :
+			$out = 'type=url&amp;url='.get_permalink();
 			break;
 	}
-	
+
 	$css = 'alignnone';
-	
+
 	switch($align){
 		case 'right'  :  $css = 'alignright'; break;
 		case 'left'   :  $css = 'alignleft'; break;
@@ -89,13 +89,13 @@ function curly_qr( $atts ) {
 		$arrow = '<span style="color:'.$pointer_color.'; margin-top: -'.($margin+3).'px; text-align: '.$pointer_position.'" data-arrow-icon="4">';
 		$arrow .= $pointer_text.'</span>';
 	}
-	
+
 	$inline = ($margin) ? ' style="margin-bottom: '.$margin.'px" ' : null;
-	
+
 	$html = '<div class="simple-qr" style="width: '.$size.'px"><img src="'.plugins_url().'/curly-extension/plugins/simple-qr/qr-generator.php?size='.$atts['size'].'&amp;'.$out.'" class="wp-image-qr '.$css.'" alt="'.$alt.'" '.$inline.'>'.$arrow.'</div>';
-	
+
 	return $html;
-	
+
 }
 add_shortcode( 'simple-qr', 'curly_qr' );
 

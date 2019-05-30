@@ -1,0 +1,252 @@
+#individual-page-settings *{
+	outline: none;
+}
+#individual-page-settings .pull-right{
+	float: right;
+}
+#individual-page-settings .inside{
+	padding: 0;
+	margin: 0;
+	background: #F5F5F5;
+}
+#individual-page-settings-wrapper {
+	overflow: auto;
+	position: relative;
+	border: none;
+	padding: 0;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+/* Tab List */
+.hashTabber-nav{
+	float: left;
+	width: 180px;
+	position: absolute;
+	height: 100%;
+	z-index: 1;
+	background: #F5F5F5;
+	margin: 0;
+	padding: 0;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+.hashTabber-nav > li{
+	padding: 0;
+	margin: 0;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	float: none;
+	border: none;
+	color: inherit;
+	background: transparent;
+}
+.hashTabber-nav > li > a{
+	text-decoration: none;
+	outline: none;
+	text-decoration: none;
+	display: block;
+	padding: 10px 0 10px 20px;
+	line-height: 20px;
+	border-bottom: 1px solid #E5E5E5;
+	-webkit-transition: none;
+		-moz-transition: none;
+		-ms-transition: none;
+		-o-transition: none;
+		transition: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	float: none;
+}
+.hashTabber-nav > li.active > a{
+	background: #fff;
+	position: relative;
+	z-index: 2;
+	box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, .07);
+}
+.hashTabber-nav::after{
+	content: ' ';
+	display: block;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	border-left: 1px solid  #E5E5E5;
+	top: 0;
+	bottom: 0;
+}
+
+/* Tabs */
+.hashTabber-data{
+	float: left;
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding-left: 180px;
+	position: relative;
+	height: 100%;
+	min-height: 289px;
+	background: #fff;
+	margin: 0;
+}
+.hashTabber-data > li{
+	display: none;
+	box-sizing: border-box;
+	padding: 0 30px;
+	width: 100%;
+}
+.hashTabber-data > li.active{
+	display: table;
+}
+
+/* Form Elements */
+#individual-page-settings .form-control {
+	overflow: hidden;
+	display: block;
+	margin-bottom: 30px;
+	max-width: 550px;
+}
+#individual-page-settings .form-control .name{
+	display: block;
+	margin: 10px 0 5px;
+	font-weight: bold;
+	line-height: 20px;
+}
+#individual-page-settings .form-control:last-child .name,
+#individual-page-settings .form-control:last-child > div{
+	border-bottom: none;
+}
+#individual-page-settings .form-control > div{
+	display: block;
+}
+#individual-page-settings .form-control .description{
+	display: block;
+	color: #95a5a6;
+	font-style: normal;
+	line-height: 1.4em;
+}
+#individual-page-settings .form-control .slider_value + .description{
+	padding-right: 100px;
+}
+#individual-page-settings .form-control.checkbox .description{
+	display: inline-block;
+	line-height: 27px;
+}
+#individual-page-settings .form-control .description strong.red{
+	color: #c0392b;
+}
+#individual-page-settings .form-control .text-field{
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	margin-bottom: 3px;
+	padding: 0 10px;
+	min-height: 27px;
+	line-height: 27px;
+	font-family: inherit;
+	font-size: 13px;
+	line-height: 27px;
+}
+#individual-page-settings .form-control .textarea{
+	width: 100%;
+	height: 70px;
+	margin-bottom: 3px;
+	padding: 5px 10px;
+	font-family: inherit;
+	font-size: 13px;
+	line-height: 1.4em;
+}
+#individual-page-settings .form-control .select{
+	min-width: 25%;
+	margin-bottom: 3px;
+	font-family: inherit;
+	font-size: 13px;
+	line-height: 1.4em;
+}
+#individual-page-settings .form-control.image-field .button{
+	margin: 5px 5px 5px 0;
+}
+#individual-page-settings .form-control .image-preview{
+	margin: 10px 0;
+	max-width: 100%;
+	height: auto;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	display: block;
+}
+#individual-page-settings .form-control .slider_value{
+	position: absolute;
+	line-height: 1.4em;
+	font-weight: bold;
+	top: 20px;
+	right: 0;
+	font-size: 14px;
+	color: #7f8c8d;
+}
+#individual-page-settings .form-control .slider.ui-slider{
+	position: relative;
+	background:rgba(189, 195, 199,0.35);
+	height: 6px;
+	border-radius: 100px;
+	margin: 15px 0;
+}
+#individual-page-settings .form-control .slider.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 20px;
+	height: 20px;
+	cursor: default;
+	background: #e74c3c;
+	-webkit-transition: none;
+		-moz-transition: none;
+		-ms-transition: none;
+		-o-transition: none;
+		transition: none;
+	text-decoration: none;	
+	outline: none;
+	border-radius: 100px;
+	margin-left: -12px;
+	margin-top: -8px;
+	cursor: pointer;
+	top: auto;
+	box-shadow: none;
+	border: none;
+}
+
+#individual-page-settings .form-control.radio > div > label{
+	padding-right: 20px;
+	line-height: 27px;
+	display: inline-block;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	min-width: 25%;
+}
+#individual-page-settings .form-control.radio > div > label:last-of-type{
+	padding-right: 0;
+}
+#individual-page-settings .form-control > div > label input{
+	margin-right: 10px;
+}
+
+
+/* Mobile */
+@media only screen and (max-width : 782px) {
+	#individual-page-settings-wrapper > ul > li{
+		width: auto;
+	}
+	#individual-page-settings-wrapper > ul.hashTabber-nav{
+		float: none;
+		width: 100%;
+		position: static;
+	}
+	#individual-page-settings-wrapper > ul.hashTabber-data{
+		float: none;
+		padding-left: 0;
+	}
+}

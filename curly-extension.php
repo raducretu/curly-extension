@@ -3,7 +3,7 @@
 Plugin Name: Curly Themes Extension
 Plugin URI: http://demo.curlythemes.com
 Description: Curly Themes Extension is a collection of Shortcodes, Widgets and Plugins. This plugin exclusive for Curly Themes
-Version: 2.4.2
+Version: 2.4.3
 Author: Curly Themes
 Author URI: http://www.curlythemes.com
 */
@@ -275,5 +275,6 @@ $extension 	= new CurlyThemesExtension('eque');
 $builder 	= new CurlyThemesShortcodeBuilder('eque');
 
 require_once( 'class.vc.php' );
+require_once( 'class.shortcodes.php' );
 
 ?>

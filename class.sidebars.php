@@ -218,9 +218,15 @@ if ( ! class_exists( 'WhitelabelSidebars' ) ) {
 			$sidebar = get_post_meta( $post->ID, 'white_dynamic_sidebar', true );
 
 			if( $return === true ){
-				if ( $sidebar && is_active_sidebar( $sidebar ) ) return $sidebar;
-				elseif( is_active_sidebar( $default ) ) return $default;
-				else return;
+				if ( is_active_sidebar( $sidebar ) ){
+					return $sidebar;
+				}
+				elseif( is_active_sidebar( $default ) ){
+					return $default;
+				}
+				else {
+					return;
+				}
 			} else {
 				if ( $logic === true ) {
 					if ( $sidebar && is_active_sidebar( $sidebar ) ) {
@@ -269,7 +275,7 @@ if ( ! class_exists( 'WhitelabelSidebars' ) ) {
 
 			echo '<p><strong><label>'.__('Choose Sidebar:','whitelabel').'</label></strong></p>';
 			echo '<select name="sidebar" id="sidebar">';
-			echo '<option>'.__('Choose Sidebar','whitelabel').'</option>';
+			echo '<option value="">'.__('Choose Sidebar','whitelabel').'</option>';
 			foreach ( $wp_registered_sidebars as $value ) {
 				echo '<option value="'.$value['id'].'" '.selected($default_sidebar, $value['id']).'>'.$value['name'].'</option>';
 			}

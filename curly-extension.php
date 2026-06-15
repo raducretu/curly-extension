@@ -3,10 +3,31 @@
 Plugin Name: Curly Themes Extension
 Plugin URI: http://demo.curlythemes.com
 Description: Curly Themes Extension is a collection of Shortcodes, Widgets and Plugins. This plugin exclusive for Curly Themes
-Version: 2.4.4
+Version: 2.4.5
 Author: Curly Themes
 Author URI: http://www.curlythemes.com
-*/
+Text Domain: curly-extension
+ */
+
+if ( ! defined( 'CURLY_EXTENSION_PATH' ) ) {
+	define( 'CURLY_EXTENSION_PATH', plugin_dir_path( __FILE__ ) );
+}
+
+if ( ! defined( 'CURLY_EXTENSION_URL' ) ) {
+	define( 'CURLY_EXTENSION_URL', plugin_dir_url( __FILE__ ) );
+}
+
+if ( ! defined( 'CURLY_EXTENSION_PREFIX' ) ) {
+	define( 'CURLY_EXTENSION_PREFIX', 'curly_extension' );
+}
+
+if ( ! defined( 'CT_SERVER_SHARED_PEPPER' ) ) {
+	define( 'CT_SERVER_SHARED_PEPPER', 'd4bb837fea5b8be5200a6d534518f52e232daf54eb4a3cc524d07d1c35ba41fc' );
+}
+
+if ( ! defined( 'CURLY_SUPPORT_SHARED_PEPPER' ) ) {
+	define( 'CURLY_SUPPORT_SHARED_PEPPER', CT_SERVER_SHARED_PEPPER );
+}
 
 class CurlyThemesExtension {
 
@@ -277,5 +298,9 @@ $builder 	= new CurlyThemesShortcodeBuilder('eque');
 require_once( 'class.vc.php' );
 require_once( 'class.shortcodes.php' );
 require_once( 'class.sidebars.php' );
+require_once( CURLY_EXTENSION_PATH . 'class.site.diagnostic.php' );
+require_once( CURLY_EXTENSION_PATH . 'class.curly-support-diagnostics.php' );
+
+register_activation_hook( __FILE__, array( 'Curly_Extension_Support_Diagnostics', 'activate' ) );
 
 ?>
